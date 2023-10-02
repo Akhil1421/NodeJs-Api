@@ -3,6 +3,7 @@ const _ = require("lodash")
 
 const memoizingTime = (1000 * 60 * 30)
 
+//function to fetch the blog data whenever a req is made on the endpoint and cached valid time has passed
 const fetchBlogData = async()=>{
     try {
         let apiResponse = await axios.get("https://intent-kit-16.hasura.app/api/rest/blogs",{
@@ -30,8 +31,10 @@ const fetchBlogData = async()=>{
     }
 }
 
+//memoize or cache the fetchBlogData so that api call happens only after memoizingTime which is 30 minutes for now
 const memoizedFetchBlogData = _.memoize(fetchBlogData, () => Math.floor(Date.now() / memoizingTime));
 
+//controller function to serve the req
 const getStats = async(req,res)=>{
     try {
         let finalBlogData = await memoizedFetchBlogData()    
