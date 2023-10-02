@@ -4,18 +4,18 @@
 
 ### Get Stats of Blogs (GET)
 
-``` baseUrl/api/blog-stats```
+``` https://assignment-api-80mm.onrender.com/api/blog-stats```
 
 Command:
 ```
-curl --location 'baseUrl/api/blog-stats' 
+curl --location 'https://assignment-api-80mm.onrender.com/api/blog-stats' 
 ```
 ### Get Blogs Based On Search Query (GET)
 
-``` baseUrl/api/blog-search```
+``` https://assignment-api-80mm.onrender.com/api/blog-search```
 
 Command:
 ```
-curl --location 'baseUrl/api/blog-search?query=keyword_name' 
+curl --location 'https://assignment-api-80mm.onrender.com/api/blog-search?query=keyword_name' 
 ```
 
